@@ -10,8 +10,8 @@ class TransCategory extends TransformerAbstract
   {
     // ngubah format tampilan di postman
     return [
-      'Category ID' => $field->id,
-      'Category Name' => $field->name
+      'id' => $field->id,
+      'name' => $field->name
     ];
   }
 }

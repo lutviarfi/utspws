@@ -9,8 +9,11 @@ class Category extends Model
   use SoftDeletes;
 
   protected $fillable = [
-    'name'
+    'name',
   ];
 
   protected $guarded = ['id'];
+  public function category(){
+    return $this->hasMany('App\Http\Models\Book','id');
+  }
 }

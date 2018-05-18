@@ -74,25 +74,25 @@ class ConBook extends Controller
         //        $book = Book::where('categories_id','=',Category::find($id));
 
         $data = $request->only([
-            'judul',
-            'kategori',
-            'tglrelease',
-            'pengarang',
+            'title',
+            'category_id',
+            'publisdate',
+            'author',
             'isbn',
-            'penerbit'
+            'publisher'
         ]);
 
-        $idcat = Category::find($data['kategori']);
+        $idcat = Category::find($data['category_id']);
 
         if($idcat)
         {
             $insert = new Book([
-                'title' => $data['judul'],
-                'categories_id' => $data['kategori'],
-                'date_release' => $data['tglrelease'],
-                'author' => $data['pengarang'],
-                'page_number' => $data['jml_hlm'],
-                'publisher' => $data['penerbit'],
+                'title' => $data['title'],
+                'category_id' => $data['category_id'],
+                'publisdate' => $data['publisdate'],
+                'author' => $data['author'],
+                'isbn' => $data['isbn'],
+                'publisher' => $data['publisher'],
             ]);
 
             try {
@@ -118,25 +118,25 @@ class ConBook extends Controller
         }
         if($update){
             $data = $request->only([
-                'judul',
-                'kategori',
-                'tglrelease',
-                'pengarang',
-                'jml_hlm',
-                'penerbit'
+                'title',
+                'category_id',
+                'publisdate',
+                'author',
+                'isbn',
+                'publisher'
             ]);
 
-            $idcat = Category::find($data['kategori']);
+            $idcat = Category::find($data['category_id']);
 
             if($idcat)
             {
                 $update->fill([
-                    'title' => $data['judul'],
-                    'categories_id' => $data['kategori'],
-                    'date_release' => $data['tglrelease'],
-                    'author' => $data['pengarang'],
-                    'page_number' => $data['jml_hlm'],
-                    'publisher' => $data['penerbit']
+                    'title' => $data['title'],
+                    'category_id' => $data['category_id'],
+                    'publisdate' => $data['publisdate'],
+                    'author' => $data['author'],
+                    'isbn' => $data['isbn'],
+                    'publisher' => $data['publisher']
                     ]);
                 try{
                     $update->update();

@@ -34,4 +34,19 @@ $api->version('v1',function($api){
   
     // Delete
     $api->delete('categories/{id}','App\Http\Controllers\ConCategory@destroy');
+
+    //book controller
+    $api->get('books','App\Http\Controllers\ConBook@index');
+  
+    // read
+    $api->get('books/{id}','App\Http\Controllers\ConBook@show');
+  
+    // Creat
+    $api->post('books','App\Http\Controllers\ConBook@store');
+  
+    // Update
+    $api->put('books/{id}','App\Http\Controllers\ConBook@update');
+  
+    // Delete
+    $api->delete('books/{id}','App\Http\Controllers\ConBook@destroy');
   });

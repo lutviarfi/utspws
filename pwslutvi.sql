@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2018 at 02:37 PM
+-- Generation Time: May 18, 2018 at 03:55 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `books` (
   `Id` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `update_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `category_id` bigint(20) DEFAULT NULL,
   `title` varchar(150) DEFAULT NULL,
@@ -40,6 +40,16 @@ CREATE TABLE `books` (
   `publisdate` date DEFAULT NULL,
   `author` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`Id`, `created_at`, `updated_at`, `deleted_at`, `category_id`, `title`, `isbn`, `publisher`, `publisdate`, `author`) VALUES
+(1, '2018-05-18 13:32:47', '2018-05-18 13:32:47', NULL, 1, 'networking', 'bas732465', 'budiluhur', '2018-05-01', 'lutvi'),
+(2, '2018-05-18 13:44:59', '2018-05-18 13:44:59', NULL, 1, 'program', 'sdbjf08237', 'bl', '2017-09-03', 'lutvi'),
+(3, '2018-05-18 13:53:17', '2018-05-18 13:53:17', NULL, 1, 'algo', 'vahja8978', 'budiluhur', '2018-01-01', 'lutvi'),
+(4, '2018-05-18 13:53:53', '2018-05-18 13:53:53', NULL, 3, 'algorithm', 'vahja8978', 'budiluhur', '2018-01-01', 'lutvi');
 
 -- --------------------------------------------------------
 
@@ -89,7 +99,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`

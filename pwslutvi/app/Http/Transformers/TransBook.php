@@ -31,13 +31,13 @@ class TransBook extends TransformerAbstract
     {
         //ngubah format Tampilan di Postman
         return[
-            'ID Buku' => $field->Id,
-            'ID Kategori' => $field->category_id,
-            'Judul Buku' => $field->title,
-            'Tanggal Release' => $field->publisdate,
-            'Pengarang' => $field->author,
-            'Isbn' => $field->isbn,
-            'Penerbit' =>  $field->publisher,
+            'Id' => $field->Id,
+            'category_id' => $field->category_id,
+            'title' => $field->title,
+            'publisdate' => $field->publisdate,
+            'author' => $field->author,
+            'isbn' => $field->isbn,
+            'publisher' =>  $field->publisher,
         ];
     }
 }
